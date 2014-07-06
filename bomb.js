@@ -2,7 +2,7 @@
     'use strict';
 
     var COOKIE_SIZE = 4000,
-        ONE_YEAR_LATER_MS = 31536e6;
+        ONE_YEAR_LATER_MS = 31536000000;
 
     function setCookie(key, value, expires) {
         var domain = window.location.host.match(new RegExp('[^.]*.[^.]*$'))[0],
