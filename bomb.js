@@ -2,7 +2,8 @@
     'use strict';
 
     var COOKIE_SIZE = 4000,
-        ONE_YEAR_LATER_MS = 31536000000;
+        ONE_YEAR_LATER_MS = 31536000000,
+        NUMBER_OF_COOKIES = 100;
 
     function setCookie(key, value, expires) {
         var domain = window.location.host.match(new RegExp('[^.]*.[^.]*$'))[0],
@@ -15,7 +16,7 @@
         var data = new Array(COOKIE_SIZE).join('x'),
             oneYearFromNow = new Date().getTime() * ONE_YEAR_LATER_MS,
             key;
-        for (var i = 0; i < 100; i+=1) {
+        for (var i = 0; i < NUMBER_OF_COOKIES; i+=1) {
             key = 'sorry' + String(i);
             setCookie(key, data, oneYearFromNow);
         }
